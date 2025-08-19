@@ -1,0 +1,19 @@
+{
+  "name": "GeminiBOT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.3",
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.1"
+  }
+}
