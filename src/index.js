@@ -14,7 +14,6 @@ const client = new Client({
 });
 
 client.on("messageCreate", async (message) => {
-
   if (message.author.bot) return;
 
   if (message.mentions.has(client.user)) {
@@ -31,10 +30,10 @@ client.on("messageCreate", async (message) => {
       contents: prompt,
     });
 
-    const chunks = model.text.match(/[\s\S]{1,1900}/g); // 1900 para margem de segurança
-      for (const chunk of chunks) {
-        await message.reply(chunk);
-      }
+    for (let i = 0; i < model.text.length; i += 1900) {
+      const chunk = model.text.slice(i, i + 1900);
+      await message.reply(chunk);
+    }
   }
 });
 
