@@ -31,7 +31,10 @@ client.on("messageCreate", async (message) => {
       contents: prompt,
     });
 
-    await message.reply(model.text);
+    const chunks = model.text.match(/[\s\S]{1,1900}/g); // 1900 para margem de segurança
+      for (const chunk of chunks) {
+        await message.reply(chunk);
+      }
   }
 });
 
